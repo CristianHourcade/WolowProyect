@@ -1,0 +1,54 @@
+@use 'app/scss/colors' as colors;
+@use 'app/scss/_fonts' as fonts;
+
+body{
+    margin:0px;
+    padding:0px;
+}
+.App-Container{
+    font-family:fonts.$fontLight;
+    flex:1;
+    flex-direction:column;
+}
+
+.container{
+    margin:0px 7rem;
+}
+
+div{
+    display:flex;
+}
+.div-flex{
+    display: flex!important;
+}
+
+.flex-start-x{
+    align-items: flex-start!important;
+}
+@media screen and (min-width:1200px) {
+    html{
+        font-size:12px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    html{
+        font-size:1.5px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    html{
+        font-size:28px;
+    }
+}
+@media screen and (max-width:768px) {
+    html{
+        font-size:28px;
+    }
+}
+@media screen and (max-width:576px	) {
+    html{
+        font-size:28px;
+    }
+}

@@ -1,0 +1,25 @@
+
+@font-face {
+    font-family: MonLight;
+    src: url("../../assets/Fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: MonRegular;
+    src: url("../../assets/Fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: MonSemiBold;
+    src: url("../../assets/Fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: MonBold;
+    src: url("../../assets/Fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+$fontLight: MonLight;
+$fontRegular: MonRegular;
+$fontSemiBold: MonSemiBold;
+$fontBold: MonBold;

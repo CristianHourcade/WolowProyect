@@ -1,0 +1,11 @@
+@use '../../scss/colors' as colors;
+@use '../../scss/_fonts' as fonts;
+
+button{
+    background: transparent;
+    border: 1px solid colors.$primary;
+    padding: 10px 5vw;
+    border-radius: 25px;
+    font-family: fonts.$fontSemiBold;
+    color:colors.$primary;
+}

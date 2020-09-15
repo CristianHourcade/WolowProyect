@@ -1,0 +1,19 @@
+<nav>
+    <div id="wolox">
+        <img src="./assets/Icons/logo_full_color.svg" alt="Logo de Wolox"> 
+    </div>
+        <button id="menu-burger" (click)="[isNavbarOpen = !isNavbarOpen]">
+            <span id="line1" [ngClass]="isNavbarOpen ? 'open_animation_line1' : 'close_animation_line1'" ></span>
+            <span id="line2" [ngClass]="isNavbarOpen ? 'open_animation_line2' : 'close_animation_line2'"></span>
+        </button>
+        <span [ngClass]="isNavbarOpen ? 'open_menu' : 'close_menu'">
+            <div *ngFor="let x of urlNavigation">
+                <!-- !! In this <a> we should modify it to change the route [roterLink]={{x}} !! -->
+                <a href="#">{{x}}</a>
+            </div>
+            <div>
+                <app-button-secondary [text]="'Login'" [color]="'primary'"></app-button-secondary>
+            </div>
+        </span>
+
+</nav>

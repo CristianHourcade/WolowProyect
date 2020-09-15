@@ -1,0 +1,207 @@
+
+@use '../../scss/colors' as colors;
+@use '../../scss/_fonts' as fonts;
+
+header{
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    padding-top:65px;
+    background-image: url("/assets/Images/bg.png");
+    background-size: cover;
+    .right-center{
+        justify-content: center;
+    }
+    div{
+        flex:1;
+        h1{
+            font-size:3.5rem;
+            #b1{
+                font-family: fonts.$fontSemiBold;
+            }
+            #b2{
+                font-family: fonts.$fontBold;
+                color:colors.$secondary;
+            }
+        }
+    }
+    .figure-animation{
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+#technology{
+    margin-top: 30px;
+    div{
+        flex: 1;
+        flex-direction: row;
+        div{
+            flex:0.5;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+    
+    h3{
+        font-size: 3rem;
+        width: 65%;
+    }
+}
+
+#woloxers{
+    margin-top: 90px;
+    div{
+        flex: 1;
+        flex-direction: row;
+        #bg-woloxers{
+            background-image: url("/assets/Images/img_woloxer.png");
+            background-size: cover;
+        }
+        div{
+            padding:60px 30px;
+            background:#f2f5fa;
+            display: block;
+            flex:0.5;
+            text-align: center;
+            h3{
+                font-size: 4rem;
+                font-family: fonts.$fontBold;
+                color:colors.$secondary;
+                b{
+                    color:colors.$primary
+                }
+            }
+            a{
+                color:white;
+                font-size: 1.8rem;
+                display: block;
+                margin-bottom: 15px;
+            }
+            h2{
+                font-size: 3.5rem;
+                width: 65%;
+                margin: auto;
+                font-family: fonts.$fontRegular;
+                #b1{
+                    color:colors.$secondary;
+                }
+                b{
+                    color:colors.$primary;
+                    font-family: fonts.$fontBold;
+                }
+            }
+        }
+    }
+}
+
+#beneficios{
+    margin-top: 60px;
+    div{
+        justify-content: center;
+        align-items: center;
+        h3{
+            font-size: 2.5rem;
+        }
+        span{
+            margin-left: 15px;
+            color:colors.$primary
+        }
+    }
+    .beneficio-card{
+        flex-direction: row;
+        padding: 60px 0px;
+        box-shadow: 0px 23px 20px -35px black;    
+        .card{
+            flex-direction: column;
+            flex:0.16;
+            margin-top: 15px;
+            div{
+                flex:1;
+              
+                p{
+                    font-size: 1.5rem;
+                    text-align: center;
+                    font-family: fonts.$fontLight;
+                    min-height: 44px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+#requirimientos{
+    padding: 90px 0px;
+    
+    div{
+        flex-direction: row;
+        .flex-start-x{
+            flex:0.6;
+        }
+        div{
+            flex:0.4;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h3{
+                font-size: 2.5rem;
+                font-family: fonts.$fontSemiBold;
+            }
+            position: relative;
+
+            div{
+                
+                margin: 25px 0px;
+                .punto{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 25px;
+                    position: absolute;
+                    left:0px;
+                }
+                #color-secondary{
+                    background-color: colors.$secondary;
+                }
+                #color-texto{
+                    background-color: colors.$text-color;
+                }
+                #color-primary{
+                    background-color: colors.$primary;
+                }
+                a{
+                    margin-left: 45px;
+                    font-family: fonts.$fontLight;
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        
+    }
+}
+
+footer{
+    background-image: url("/assets/Images/bg.png");
+    background-size: cover;
+    display:block;
+    #wolox-footer{
+        padding-top: 20vh;
+        padding-bottom: 30px;
+    }
+    div{
+        display:block;
+        text-align: center;
+        h2{
+            font-size: 3.6rem;
+            font-family: fonts.$fontSemiBold;
+            b{
+                color:colors.$primary
+            }
+            margin: 0px;
+        }
+        h3{
+            margin-top: 10px;
+            font-size: 2.3rem;
+        }
+    }
+}
