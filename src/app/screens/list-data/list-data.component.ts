@@ -31,7 +31,6 @@ export class ListDataComponent implements OnInit {
     }
     this.APIListDataService.getData()
     .subscribe((Response: any) => {
-      console.log(Response)
       this.listData = Response;
       this.ChangeText(); 
     });
