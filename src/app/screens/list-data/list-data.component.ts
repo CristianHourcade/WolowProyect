@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ListData } from 'src/app/list-data';
+import { FilterSearchPipe } from 'src/app/pipes/filter-search.pipe';
+import { APIListDataService } from 'src/app/services/api-list-data.service';
 
 @Component({
   selector: 'app-list-data',
@@ -7,9 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDataComponent implements OnInit {
 
-  constructor() { }
+  listData : ListData[];
+  FilterDataName : string = "";
+  FilterDataLanguage : string = "";
+
+  OrderNameAsc : boolean = true;
+  OrderLanguageAsc : boolean = null;
+  CountRows: number = 0;
+
+  constructor(
+    private APIListDataService: APIListDataService,
+    private mRouter : Router
+    ) { }
 
   ngOnInit(): void {
+    const AuthUser = localStorage.getItem("Auth-Sesion");
+    if(AuthUser == null){
+      this.mRouter.navigate(['/'])
+    }
+    this.APIListDataService.getData()
+    .subscribe((Response: any) => {
+      this.listData = Response;
+      this.ChangeText(); 
+    });
+  }
+
+
+  ChangeText() {
+    const filterPipe = new FilterSearchPipe();
+    this.CountRows = filterPipe.transform(this.listData,
+      this.FilterDataName ,
+      this.FilterDataLanguage ,
+      this.OrderNameAsc ,
+      this.OrderLanguageAsc, true);
   }
 
 }

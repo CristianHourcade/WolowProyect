@@ -1,1 +1,43 @@
-<p>list-data works!</p>
+<div class="container flex-center">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <h3>Listado de datos</h3>
+      </li>
+      <li class="table-header2">
+          <input type="text" placeholder="Filtrar por lenguaje" [(ngModel)]="FilterDataLanguage" (keyup)="ChangeText()">
+          <input type="text" placeholder="Filtrar por nombre" [(ngModel)]="FilterDataName" (keyup)="ChangeText()" name="nombre">
+    </li>
+    <li class="table-row" >
+        <div class="col col-4" data-label=""></div>
+        <div class="col col-2" data-label="language">Language
+            <button (click)="OrderLanguageAsc = (OrderLanguageAsc)?false:true; OrderNameAsc = null; ChangeText()">
+                <i class="material-icons">swap_vert</i>
+            </button> 
+        </div>
+        <div class="col col-3" data-label="license"></div>
+        <div class="col col-4" data-label="tech"></div>
+        <div class="col col-4" data-label="type"></div>
+        <div class="col col-4" data-label="year"></div>
+        <div class="col col-1" data-label="author">Name
+            <button (click)="OrderNameAsc = (OrderNameAsc)?false:true; OrderLanguageAsc = null; ChangeText()">
+                <i class="material-icons">swap_vert</i>
+            </button>        
+        </div>
+    </li>
+      <li class="table-row" *ngFor="let x of listData | filterSearch : FilterDataName : FilterDataLanguage : OrderNameAsc : OrderLanguageAsc : false">
+          <div class="col col-4" data-label=""><img src="{{x.logo}}" style="height: 50px;"></div>
+          <div class="col col-2" data-label="language">{{x.language}}</div>
+          <div class="col col-3" data-label="license">{{x.license}}</div>
+          <div class="col col-4" data-label="tech">{{x.tech}}</div>
+          <div class="col col-4" data-label="type">{{x.type}}</div>
+          <div class="col col-4" data-label="year">{{x.year}}</div>
+          <div class="col col-1" data-label="author">{{x.author}}</div>
+      </li>
+      <li class="table-row" >
+        <div class="col col-12" data-label="" >
+            <h2>En total tenemos {{ CountRows }} datos.</h2>
+        </div>
+        
+    </li>
+    </ul>
+  </div>

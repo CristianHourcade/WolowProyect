@@ -12,6 +12,7 @@ import { LoginComponent } from './screens/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListDataComponent } from './screens/list-data/list-data.component';
+import { FilterSearchPipe } from './pipes/filter-search.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ListDataComponent } from './screens/list-data/list-data.component';
     LandingComponent,
     LoginComponent,
     ListDataComponent,
+    FilterSearchPipe
   ],
   imports: [
     BrowserModule,
