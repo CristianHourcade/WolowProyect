@@ -1,0 +1,81 @@
+@use '../../scss/colors' as colors;
+@use '../../scss/_fonts' as fonts;
+
+header{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/assets/Images/bg.png");
+    background-size: cover;
+    flex-direction: row;
+    display: flex;
+    div{
+        flex:0.65;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-login{
+        visibility: hidden;
+        animation: formRigth 2s 0.5s;
+        animation-fill-mode: forwards;
+        flex:0.35;
+        background-color:white;
+        height: 100vh;
+        box-shadow: 0px 0px 15px -5px grey;
+        .d-logo{
+            position: absolute;
+            top:50px;
+            img{
+                width: 40%;
+            }
+        }
+        h3, p{
+            text-align: center;
+            font-family: fonts.$fontSemiBold;
+        }
+        h3{
+            font-size: 3.5rem;
+            margin-bottom: 0px;
+        }
+        p{
+            font-size: 1.5rem;
+            color:colors.$muted;
+        }
+        div{
+           form{
+               width: 100%;
+               justify-content: center;
+               align-items: center;
+               display: flex;
+               flex-direction: column;
+                input{
+                    width: 100%;
+                    border-radius: 25px;
+                    background: #f3f3f3;
+                    border: 1px solid gainsboro;
+                    padding: 15px;
+                    margin: 10px 0px;
+                }
+            }
+        }
+    }
+    .text-danger{
+        color:#ec6060!important;
+    }
+    .checkbox-div{
+        margin-top: 20px;
+    }
+}
+
+
+@keyframes formRigth{
+    0%{
+        visibility: visible;
+        transform: translateX(40vw);
+    }
+
+    100%{
+        visibility: visible;
+
+        transform: translateX(0vw);
+    }
+}

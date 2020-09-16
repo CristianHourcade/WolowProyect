@@ -8,6 +8,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 import { ButtonSecondaryComponent } from './components/button-secondary/button-secondary.component';
 import { LandingComponent } from './screens/landing/landing.component';
+import { LoginComponent } from './screens/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListDataComponent } from './screens/list-data/list-data.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +21,15 @@ import { LandingComponent } from './screens/landing/landing.component';
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,
     LandingComponent,
+    LoginComponent,
+    ListDataComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

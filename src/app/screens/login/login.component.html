@@ -1,0 +1,28 @@
+<header>
+
+    <div></div>
+
+    <div class="form-login">
+        <div class="d-logo">
+            <img src="/assets/Icons/logo_full_color.svg">
+        </div>
+        <div>
+            <form [formGroup]="formLogin" >
+                <h3>¡Bienvenido!</h3>
+                <p>Inicia sesion para continuar</p>
+
+                <input type="email" placeholder="Escribi tu email"  formControlName="email" [style.border-color]="">
+                <input type="password" placeholder="Escribi tu contraseña" formControlName="password">
+                <p class="checkbox-div">
+                    Mantener la sesion iniciada
+                    <input type="checkbox" (change)="isRembemerSesion = !isRembemerSesion; ">
+                </p>
+                <p class="text-danger" *ngIf="!isValid">Verificá que hayas completado todos los datos correctamente</p>
+                <div class="flex-center">
+                    <app-button-primary text="Iniciar sesion" (onClick)="loginUser()" ></app-button-primary>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</header>
