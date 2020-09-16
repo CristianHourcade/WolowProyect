@@ -10,20 +10,29 @@ header{
     display: flex;
     div{
         flex:0.65;
+        @media screen and (max-width:996px) {
+             flex:0;
+        }
         justify-content: center;
         align-items: center;
     }
     .form-login{
         visibility: hidden;
-        animation: formRigth 2s 0.5s;
+        animation: formRigth 0.9s 0.5s;
         animation-fill-mode: forwards;
         flex:0.35;
+        @media screen and (max-width:996px) { flex:1;     }
+
         background-color:white;
         height: 100vh;
+        @media screen and (max-width:800px){ height: auto; min-height: 100vh;}
+
         box-shadow: 0px 0px 15px -5px grey;
         .d-logo{
             position: absolute;
             top:50px;
+        @media screen and (max-width:800px){ top:25px}
+
             img{
                 width: 40%;
             }
@@ -31,13 +40,19 @@ header{
         h3, p{
             text-align: center;
             font-family: fonts.$fontSemiBold;
+
         }
         h3{
+            @media screen and (max-width:996px){
+                margin-top: 15vh;
+            }
             font-size: 3.5rem;
+            @media screen and (max-width:996px){ font-size: 2rem;}
             margin-bottom: 0px;
         }
         p{
             font-size: 1.5rem;
+            @media screen and (max-width:996px){ font-size: 1rem;}
             color:colors.$muted;
         }
         div{
@@ -63,6 +78,7 @@ header{
     }
     .checkbox-div{
         margin-top: 20px;
+
     }
 }
 
