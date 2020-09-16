@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FilterSearchPipe } from 'src/app/pipes/filter-search.pipe';
 
 import { ListDataComponent } from './list-data.component';
 
@@ -8,7 +11,8 @@ describe('ListDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListDataComponent ]
+      imports: [HttpClientModule, RouterTestingModule,],
+      declarations: [ ListDataComponent, FilterSearchPipe ],
     })
     .compileComponents();
   });

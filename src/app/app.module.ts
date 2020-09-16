@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListDataComponent } from './screens/list-data/list-data.component';
 import { FilterSearchPipe } from './pipes/filter-search.pipe';
+import { ApiLoginService } from './services/api-login.service';
+import { APIListDataService } from './services/api-list-data.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { FilterSearchPipe } from './pipes/filter-search.pipe';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  exports:[FilterSearchPipe],
+  providers: [ApiLoginService,APIListDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

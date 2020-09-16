@@ -12,4 +12,11 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goWolowsTwitter(){
+    window.open('https://twitter.com/Wolox', '_blank');
+  }
+
+  goWoloxWebSite(){
+    window.open('https://www.wolox.com.ar/', '_blank');
+  }
 }

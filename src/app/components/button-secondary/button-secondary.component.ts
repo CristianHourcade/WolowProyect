@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button-secondary',
@@ -9,11 +9,16 @@ export class ButtonSecondaryComponent implements OnInit {
 
   @Input() text: string;
   @Input() color: string;
+  @Output() onClick = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
     
+  }
+
+  SendEvent() {
+    this.onClick.emit();
   }
 
 }

@@ -11,8 +11,8 @@
                 <!-- !! In this <a> we should modify it to change the route [roterLink]={{x}} !! -->
                 <a href="#">{{x}}</a>
             </div>
-            <div>
-                <app-button-secondary [text]="'Login'" [color]="'primary'"></app-button-secondary>
+            <div *ngIf="!AuthSotrage">            
+                <app-button-secondary [text]="'Login'" [color]="'primary'" (onClick)="GoLogin()"></app-button-secondary>
             </div>
         </span>
 

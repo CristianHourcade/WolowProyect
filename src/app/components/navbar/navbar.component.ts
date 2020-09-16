@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +10,16 @@ export class NavbarComponent implements OnInit {
 
   isNavbarOpen: boolean = false;
   urlNavigation: string[] = ['Inicio', 'Tecnologías', 'Beneficios', 'Requerimientos'];
-  
-  constructor() { }
+  AuthSotrage: string = null;
+  constructor(
+    private mRouter: Router
+  ) { }
 
   ngOnInit(): void {
+    this.AuthSotrage = localStorage.getItem("Auth-Sesion");
   }
 
+  GoLogin(){
+    this.mRouter.navigate(["/login"]);
+  }
 }

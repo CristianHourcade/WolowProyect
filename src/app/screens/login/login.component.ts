@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
  
 
   ngOnInit(): void {
+    if(localStorage.getItem("Auth-Sesion") != null){this.router.navigate(["/listado"])}
   }
 
   loginUser() {
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("Auth-Sesion", "true");
           localStorage.setItem("Email", this.formLogin.value.email);
         }
-        this.router.navigate(['']);
+        this.router.navigate(['/listado']);
       })
     }
   }

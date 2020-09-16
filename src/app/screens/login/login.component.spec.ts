@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ApiLoginService } from 'src/app/services/api-login.service';
 
 import { LoginComponent } from './login.component';
 
@@ -8,7 +12,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      imports:[HttpClientModule, RouterTestingModule],
+      declarations: [ LoginComponent ],
+      providers:[ApiLoginService,FormBuilder]
     })
     .compileComponents();
   });

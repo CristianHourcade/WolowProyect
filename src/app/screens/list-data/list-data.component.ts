@@ -13,7 +13,7 @@ export class ListDataComponent implements OnInit {
 
   listData : ListData[];
   FilterDataName : string = "";
-  FilterDataLanguage : string = "";
+  FilterDataType : string = "";
 
   OrderNameAsc : boolean = true;
   OrderLanguageAsc : boolean = null;
@@ -31,6 +31,7 @@ export class ListDataComponent implements OnInit {
     }
     this.APIListDataService.getData()
     .subscribe((Response: any) => {
+      console.log(Response)
       this.listData = Response;
       this.ChangeText(); 
     });
@@ -41,7 +42,7 @@ export class ListDataComponent implements OnInit {
     const filterPipe = new FilterSearchPipe();
     this.CountRows = filterPipe.transform(this.listData,
       this.FilterDataName ,
-      this.FilterDataLanguage ,
+      this.FilterDataType ,
       this.OrderNameAsc ,
       this.OrderLanguageAsc, true);
   }

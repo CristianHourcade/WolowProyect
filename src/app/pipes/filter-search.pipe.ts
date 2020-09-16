@@ -16,7 +16,7 @@ export class FilterSearchPipe implements PipeTransform {
 
     value.forEach(item => {
       if(item.author.toLowerCase().trim().match(dataFilter.toLowerCase().trim())){
-        if(item.language.toLowerCase().trim().match(dataFilterLanguage.toLowerCase().trim())){
+        if(item.type.toLowerCase().trim().match(dataFilterLanguage.toLowerCase().trim())){
           DataToShow.push(item);
         }
       }
@@ -27,8 +27,8 @@ export class FilterSearchPipe implements PipeTransform {
     if(isLenguajeAsc !== null){
 
       return DataToShow.sort((a, b) => {
-        var x = a["language"],
-        y = b["language"];
+        var x = a["type"],
+        y = b["type"];
 
         if (isNameAsc) {
             return ((x < y) ? -1 : ((x > y) ? 1 : 0));
