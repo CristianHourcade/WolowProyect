@@ -12,11 +12,10 @@ describe('ListDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterTestingModule,],
-      declarations: [ ListDataComponent, FilterSearchPipe ],
-      providers:[APIListDataService]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, RouterTestingModule],
+      declarations: [ListDataComponent, FilterSearchPipe],
+      providers: [APIListDataService]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,11 +26,9 @@ describe('ListDataComponent', () => {
 
   it('should get data', () => {
     const service: APIListDataService = TestBed.get(APIListDataService);
-    service.getData().subscribe(
-      (Data) => {
-        expect(Data[0].author).toEqual('Ryan Dahl');
-      }
-    );
+    service.getData().subscribe((Data) => {
+      expect(Data[0].author).toEqual('Ryan Dahl');
+    });
   });
 
   it('should create', () => {

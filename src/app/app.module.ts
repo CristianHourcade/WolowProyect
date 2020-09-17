@@ -35,8 +35,8 @@ import { APIListDataService } from './services/api-list-data.service';
     HttpClientModule,
     FormsModule
   ],
-  exports:[FilterSearchPipe],
-  providers: [ApiLoginService,APIListDataService],
+  exports: [FilterSearchPipe],
+  providers: [ApiLoginService, APIListDataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

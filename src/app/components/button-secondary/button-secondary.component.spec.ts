@@ -8,9 +8,8 @@ describe('ButtonSecondaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonSecondaryComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonSecondaryComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

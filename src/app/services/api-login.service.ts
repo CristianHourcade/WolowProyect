@@ -6,19 +6,18 @@ import { Usuario } from '../usuario';
   providedIn: 'root'
 })
 export class ApiLoginService {
+  private API_URL =
+    'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
 
-  private API_URL = "http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login";
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  loginUser(form : Usuario) {
+  loginUser(form: Usuario) {
     const Headers = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
+        'Content-Type': 'application/json'
       })
     };
 
     return this.httpClient.post<Usuario>(this.API_URL, form, Headers);
   }
-
 }

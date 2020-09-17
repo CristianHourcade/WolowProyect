@@ -9,10 +9,9 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[RouterTestingModule],
-      declarations: [ NavbarComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [NavbarComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

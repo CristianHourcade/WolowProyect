@@ -6,12 +6,12 @@ import { ListData } from '../list-data';
   providedIn: 'root'
 })
 export class APIListDataService {
+  private API_URL =
+    'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs';
 
-  private API_URL = "http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs";
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getData() {
-    return this.httpClient.get<ListData>(this.API_URL)
+    return this.httpClient.get<ListData>(this.API_URL);
   }
 }

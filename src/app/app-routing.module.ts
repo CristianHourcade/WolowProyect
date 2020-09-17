@@ -9,22 +9,24 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./screens/landing/landing.module').then((m) => m.LandingModule),
+      import('./screens/landing/landing.module').then((m) => m.LandingModule)
   },
   {
     path: 'login',
     loadChildren: () =>
-      import('./screens/login/login.module').then((m) => m.LoginModule),
-  }, 
+      import('./screens/login/login.module').then((m) => m.LoginModule)
+  },
   {
     path: 'listado',
     loadChildren: () =>
-      import('./screens/list-data/list-data.module').then((m) => m.ListDataModule),
-  },
+      import('./screens/list-data/list-data.module').then(
+        (m) => m.ListDataModule
+      )
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

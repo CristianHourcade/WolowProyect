@@ -5,56 +5,63 @@ import { ListData } from '../list-data';
   name: 'filterSearch'
 })
 export class FilterSearchPipe implements PipeTransform {
+  transform(
+    value: ListData[],
+    dataFilter: string,
+    dataFilterLanguage: string,
+    isNameAsc: boolean,
+    isLenguajeAsc: boolean,
+    isSize: boolean
+  ): any {
+    const DataToShow = [];
 
-  transform(value: ListData[],  dataFilter: string, dataFilterLanguage:string, isNameAsc:boolean, isLenguajeAsc:boolean, isSize:boolean,): any {
-    
-    let DataToShow = [];
-
-    if(value === undefined){
+    if (value === undefined) {
       return null;
     }
 
-    value.forEach(item => {
-      if(item.author.toLowerCase().trim().match(dataFilter.toLowerCase().trim())){
-        if(item.type.toLowerCase().trim().match(dataFilterLanguage.toLowerCase().trim())){
+    value.forEach((item) => {
+      if (
+        item.author.toLowerCase().trim().match(dataFilter.toLowerCase().trim())
+      ) {
+        if (
+          item.type
+            .toLowerCase()
+            .trim()
+            .match(dataFilterLanguage.toLowerCase().trim())
+        ) {
           DataToShow.push(item);
         }
       }
     });
-    if(isSize){
+    if (isSize) {
       return DataToShow.length;
     }
-    if(isLenguajeAsc !== null){
-
+    if (isLenguajeAsc !== null) {
       return DataToShow.sort((a, b) => {
-        var x = a["type"],
-        y = b["type"];
+        const x = a['type'],
+          y = b['type'];
 
         if (isNameAsc) {
-            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+          return x < y ? -1 : x > y ? 1 : 0;
         }
 
         if (!isNameAsc) {
-            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+          return x > y ? -1 : x < y ? 1 : 0;
         }
       });
-
-    }else if(isNameAsc !== null){
-
+    } else if (isNameAsc !== null) {
       return DataToShow.sort((a, b) => {
-          var x = a["author"],
-          y = b["author"];
+        const x = a['author'],
+          y = b['author'];
 
-          if (isNameAsc) {
-              return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-          }
+        if (isNameAsc) {
+          return x < y ? -1 : x > y ? 1 : 0;
+        }
 
-          if (!isNameAsc) {
-              return ((x > y) ? -1 : ((x < y) ? 1 : 0));
-          }
+        if (!isNameAsc) {
+          return x > y ? -1 : x < y ? 1 : 0;
+        }
       });
-
     }
-
   }
 }

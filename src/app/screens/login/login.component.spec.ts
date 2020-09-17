@@ -12,11 +12,10 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule, RouterTestingModule],
-      declarations: [ LoginComponent ],
-      providers:[ApiLoginService,FormBuilder]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, RouterTestingModule],
+      declarations: [LoginComponent],
+      providers: [ApiLoginService, FormBuilder]
+    }).compileComponents();
   });
 
   beforeEach(() => {

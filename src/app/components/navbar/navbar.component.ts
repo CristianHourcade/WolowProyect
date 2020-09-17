@@ -7,19 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  isNavbarOpen: boolean = false;
-  urlNavigation: string[] = ['Inicio', 'Tecnologías', 'Beneficios', 'Requerimientos'];
+  isNavbarOpen = false;
+  urlNavigation: string[] = [
+    'Inicio',
+    'Tecnologías',
+    'Beneficios',
+    'Requerimientos'
+  ];
   AuthSotrage: string = null;
-  constructor(
-    private mRouter: Router
-  ) { }
+  constructor(private mRouter: Router) {}
 
   ngOnInit(): void {
-    this.AuthSotrage = localStorage.getItem("Auth-Sesion");
+    this.AuthSotrage = localStorage.getItem('Auth-Sesion');
   }
 
-  GoLogin(){
-    this.mRouter.navigate(["/login"]);
+  GoLogin() {
+    this.mRouter.navigate(['/login']);
   }
 }
